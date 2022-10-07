@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDebtSolver", "CapstoneDebtSolver\CapstoneDebtSolver.csproj", "{F5010277-116F-47F6-BC86-5CD3DE86F542}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5010277-116F-47F6-BC86-5CD3DE86F542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5010277-116F-47F6-BC86-5CD3DE86F542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5010277-116F-47F6-BC86-5CD3DE86F542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5010277-116F-47F6-BC86-5CD3DE86F542}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F86D9BD-324D-4275-9219-CD123A3B6EEC}
+	EndGlobalSection
+EndGlobal
