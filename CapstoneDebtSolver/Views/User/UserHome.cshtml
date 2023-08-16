@@ -1,0 +1,48 @@
+﻿@model UserViewModel;
+@{
+    ViewData["Title"] = "Your Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hey @Model.Name</h1>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <img src="/AllImages/AdminIcon.jpg" />
+    }else if(User.IsInRole("User"))
+    {
+        @if(@Model.UserPic != "")
+        {
+             <img src="/AllImages/@Model.UserPic" />
+        }
+        else
+        {
+            <img src="/AllImages/NewUserIcon.png" />
+        }
+        
+    }
+
+    <div>
+        <a href="/User/Update">Update Profile</a>
+        <a href="/User/UserInfo">View Full Profile</a>
+    </div>
+ 
+    <div>Email: @Model.Email</div>
+    <ol>
+    @foreach(DebtDAL.Models.Job SavedJobs in @Model.SavedJobs)
+    {
+            <li>
+            <section>@SavedJobs.Name</section>
+            <section>@SavedJobs.PositionName</section>
+            <section>@SavedJobs.PositionDescription</section>
+            </li>
+        
+
+    }
+    </ol>
+        
+    
+    
+
+    
+</div>

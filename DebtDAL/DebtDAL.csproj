@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Lib\WebServiceCareerjet\WebService.Careerjet.Client.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Lib\WebServiceCareerjet\WebService.Careerjet.Client.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json.Net20">
+      <HintPath>Lib\WebServiceCareerjet\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="WebService.Careerjet.Client">
+      <HintPath>Lib\WebServiceCareerjet\WebService.Careerjet.Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

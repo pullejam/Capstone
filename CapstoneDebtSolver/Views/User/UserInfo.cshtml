@@ -1,0 +1,68 @@
+﻿@model UserViewModel;
+@{
+    ViewData["Title"] = "Your Info";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hello @Model.Name, This is all of your information</h1>
+
+
+
+    @if (User.IsInRole("Admin"))
+    {
+        <img src="/AllImages/AdminIcon.jpg" />
+    }else if(User.IsInRole("User"))
+    {
+        <img src="/AllImages/NewUserIcon.png" />
+    }
+
+ 
+    <div>Email: @Model.Email</div>
+    <div>Address: @Model.Address</div>
+    <div>Cost Of Living: @Model.CostOfLiving</div>
+    <div>Ammount of Debt: @Model.DebtAmount</div>
+    @if(@Model.Talents.Count > 0){
+
+    
+    <h3>Your Talents: </h3>
+
+    <ol>
+     @foreach(DebtDAL.Models.Talent talent in @Model.Talents)
+    {
+            <li>
+            <section>@talent.TalentName</section>
+            </li>
+        
+
+    }
+    </ol>
+    }else{
+        <h3>Your Talents: </h3>
+        <section> No Talents on Record</section>
+    }
+
+
+    @if(@Model.Certifications.Count > 0){
+
+    
+    <h3>Your Certifications: </h3>
+    <ol>
+     @foreach(DebtDAL.Models.Certification certification in @Model.Certifications)
+    {
+            <li>
+            <section>@certification.CertificationName</section>
+            </li>
+        
+
+    }
+    </ol>
+    }else{
+         <h3>Your Certifications: </h3>
+        <section> No Certifications on Record</section>
+    }
+        
+    
+    
+
+    
+</div>

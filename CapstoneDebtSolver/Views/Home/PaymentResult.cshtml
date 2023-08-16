@@ -1,0 +1,16 @@
+﻿@model int[];
+@{
+    ViewData["Title"] = "Payment Results Page";
+}
+<div id="ProcessedTitle">
+    <h1>Your request has been processed!</h1>
+</div>
+<div id = "PayResp">
+<h3>Based on your information provided, to maintain an ideal lifestyle and pay off your debt simultaneously, you will need :</h3>
+<h4>A salary of : $@Model[1]</h4>
+<h4>An Hourly Wage of : $@Model[0]</h4>
+<p style="color:darkred;font-size:14px;"> <span>&#42;</span>Hourly wage is based on a 40hrs/week Job.</p>
+</div>
+
+<div id="JobSearch"><a href="/Home/JobSearch">Ready to find that Job?</a></div>
+

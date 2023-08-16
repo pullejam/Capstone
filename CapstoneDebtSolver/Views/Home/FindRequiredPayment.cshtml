@@ -1,0 +1,46 @@
+﻿@model UserViewModel;
+@{
+    ViewData["Title"] = "Payment Search Information";
+}
+<h1>Lets find out your ideal wage / salary</h1>
+
+<div>
+    <form action = "/Home/GeneratePayment" method="post">
+    <div>Cost Of Living (Monthly):</div>
+    @if(@Model.CostOfLiving != 0)
+    {
+        <input type="number" name = "CostOfLiving" value=@Model.CostOfLiving required/>
+    }
+    else
+    {
+         <input type="number" name = "CostOfLiving" required/>
+    }
+   
+
+    <div>Debt Amount:</div>
+    @if(@Model.DebtAmount != 0)
+    {
+        <input type="number" name = "DebtAmount" value = @Model.DebtAmount required/>
+    }
+    else
+    {
+        <input type="number" name = "DebtAmount" required/>
+    }
+
+
+    <div>Repayment Time (In Years):</div>
+
+    <input type="number" name = "RepaymentTime" required/>
+
+    <div>Extra Costs (Optional: typically used to include monthly savings):</div>
+
+    <input type="number" name = "ExtraCost" />
+    
+    <input type="submit" class="submitBtn" value="Get Payment" />
+    </form>
+    
+    
+
+
+</div>
+

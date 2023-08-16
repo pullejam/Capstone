@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DebtDAL.Models
+{
+    public class Talent
+    {
+        [Key]
+        public int TalentId { get; set; }
+        public string TalentName { get; set; }
+        public Talent()
+        {
+            TalentName = string.Empty;
+        }
+    }
+}

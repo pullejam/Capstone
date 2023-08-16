@@ -1,0 +1,62 @@
+﻿@model List<DebtDAL.Models.Job>;
+@{
+    ViewData["Title"] = "Results Page";
+}
+
+<section class="main-content">
+		<div class="container">
+			<h1 class="text-center text-uppercase">Here Are The Results</h1>
+		@if (@Model != null)
+		{
+			@if (@Model.Count > 0)
+			{
+				@foreach (DebtDAL.Models.Job job in @Model)
+				{
+					<br/>
+					<br/>
+
+					<div >
+						<div class="col-sm-6 offset-sm-3">
+							<div class="job-card">
+								<div class="job-card__content">
+									<div class="job-card_img">
+										<img src="/AllImages/defaultJobImg.jpg" alt="Company Logo">
+									</div>
+									<div class="job-card_info">
+										<h6 class="text-muted">
+											<a href="#!" class="job-card_company">@job.Name</a> 
+											<a href="#!" class="float-right">
+												<i class="fa fa-heart-o"></i>
+											</a>
+										</h6>
+										<h4>@job.PositionName</h4>
+										<p class="mb-0">@job.Payment</p>
+									</div>
+								</div>
+								<div class="job-card__footer">
+									<div class="job-card_job-type">
+										<span class="job-label">@job.PaymentType</span>
+										<span class="job-label">@job.state</span>
+										<span class="job-label">Posted: @job.PostDate</span>
+									</div>
+									<div>Summary / Preferences: @job.PositionDescription.Replace('\n', ' ')<div/>
+									<a href=@job.Link target=”_blank” class="btn btn-primary" >Check It Out</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+				}
+			}
+		}
+
+
+
+
+		
+	</section>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

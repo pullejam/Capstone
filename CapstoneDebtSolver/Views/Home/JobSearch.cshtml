@@ -1,0 +1,52 @@
+﻿@model UserViewModel;
+@{
+    ViewData["Title"] = "Search Page";
+}
+
+<div class="text-center">
+    <form action="Results" method="post">
+        <h1 class="display-4">Search For A Job</h1>
+        <h2>Please submit a keyword for your desired job</h2>
+        <input type="text" name="Keyword" placeholder="Please Enter A Keyword For the Job"  required />
+        <input type="submit" class="submitBtn" value="Submit your keyword" />
+    </form>
+
+
+    <form action="IdealJobByPay" method="post">
+        <br/>
+        <br/>
+        <h2>Please submit a keyword, salary and hourly requirement for your desired job</h2>
+        <input type="text" name="KeywordId" placeholder="Please Enter A Keyword For the Job"  required/>
+        <input type="number" name="SalaryId" placeholder="Please Enter A Salary Req For the Job"  required/>
+        <input type="number" name="HourlyId" placeholder="Please Enter A Hourly Req For the Job" required />
+        <input type="submit" class="submitBtn" value="Submit your search requirements" />
+    </form>
+
+
+    @if (User.IsInRole("User"))
+    {
+        @if (@Model != null)
+        {
+        @if(@Model.Talents.Count > 0)
+        {
+     <form action="Results" method="post">
+          <br/>
+        <br/>
+            <h2>If you would prefer to use a talent, pick from your list below:</h2>
+                @foreach(var talent in @Model.Talents)
+                {
+                    <input type="radio" name = "keyword" id = @talent.TalentName value=@talent.TalentName />
+                    <label for=@talent.TalentName>@talent.TalentName</label>
+                }
+        <input type="submit" class="submitBtn" value="Submit your talent " />
+    </form>
+        }
+
+        }
+
+        
+    }
+    
+
+
+</div>
